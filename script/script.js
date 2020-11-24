@@ -2,28 +2,29 @@ var app = new Vue( {
   el: '#root',
   data: {
 
-
+    query : '',
 },
   methods : {
 
-      axios.get('https://api.themoviedb.org/3/search/movie' ,  {
-          params : {
+      searchMovies()  {
+          axios.get('https://api.themoviedb.org/3/search/movie', {
+              params : {
 
-            apiKey : 6eef0740d3ea72e3ca8701f8207cac60,
-            query : '' ,
-          }
+                apiKey : 'a837f0e3cc53c9e644cd012f87fc7331',
+                query : this.query ,
+              }
 
-      } )
-  .then(response => {
+        })
+        .then(response => {
+              console.log(response);
 
-
-  })
-
-
+        })
 
 
+
+
+    },
 },
-
   mounted () {
 
 

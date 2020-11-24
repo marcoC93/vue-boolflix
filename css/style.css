@@ -1,5 +1,57 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+body {
+    height: 100vh ;
+    background: #221f1f ;
+}
+main {
+    background: #221f1f ;
+    color: #f5f5f1
+}
+footer {
+    background: #221f1f ;
+    color: #f5f5f1;
+}
+.bg {
+    background: #e50914;
+}
+.btn-outline-success {
+	color: #221f1f;
+	border-color: #221f1f;
+}
+.btn-outline-success:hover {
+	color:  #221f1f;
+	background-color: #fff;
+	border-color: #e50914;
+}
+.jumbotron {
+    color: #221f1f;
+}
+.card {
+    color: white;
+    background: #221f1f ;
+}
+
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+
+ /*  Media query visualizzazione smartphone  */
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
