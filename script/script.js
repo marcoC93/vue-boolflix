@@ -3,6 +3,7 @@ var app = new Vue( {
   data: {
 
     query : '',
+    researchResults : [],
 },
   methods : {
 
@@ -16,7 +17,10 @@ var app = new Vue( {
 
         } )
         .then((results) => {
-              console.log(results);
+              console.log(results.data.results);
+
+              this.researchResults = [...results.data.results] ;
+              console.log(this.researchResults);
 
         });
 
