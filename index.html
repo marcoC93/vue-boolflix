@@ -46,8 +46,10 @@
 
             </ul>
             <div class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Cerca film" aria-label="Search" v-model='query'>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="searchMovies">Search</button>
+              <input class="form-control mr-sm-2" type="text" placeholder="Cerca film" aria-label="Search" v-model='query' @keyup.enter="searchMovies">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="searchMovies" >
+                  Search
+              </button>
           </div>
             </div>
             </nav>
@@ -69,16 +71,18 @@
               <div class="col-md-4 card" v-for="result in researchResults">
                   <h2>{{result.title}}</h2>
                   <h3>{{result.original_title}}</h3>
-                  <p>{{result.original_language}}</p>
-                  <u>
+                  <span class="text-capitalize">lingua</span>
+                  <img :src="'img/' + result.original_language +'.png'" :alt="result.original_language" >
+                  <!-- <p>{{result.original_language}}</p> -->
+                  <ul>
                       <li>
                           <i class="fas fa-star" v-for="vote in voteCalculation(result)">
                           </i>
                           <i class="far fa-star" v-for="vote in (5 - voteCalculation(result))">
                           </i>
-                          
+
                       </li>
-                  </u>
+                  </ul>
                   <p><a class="btn btn-secondary" href="#" role="button">vai alla scheda completa &raquo;</a></p>
               </div>
 

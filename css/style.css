@@ -15,9 +15,14 @@ footer {
     background: #221f1f ;
     color: #f5f5f1;
 }
+ul {
+    list-style-type: none;
+}
 .bg {
     background: #e50914;
 }
+
+/* Pulsante ricerca navbar  */
 .btn-outline-success {
 	color: #221f1f;
 	border-color: #221f1f;
@@ -27,12 +32,20 @@ footer {
 	background-color: #fff;
 	border-color: #e50914;
 }
+
+
 .jumbotron {
     color: #221f1f;
 }
+/*  schede film e serie tv */
 .card {
+    padding: 10px;
     color: white;
     background: #221f1f ;
+}
+.card img {
+    width: 50px;
+    display: inline-block;
 }
 
 
