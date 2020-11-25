@@ -4,6 +4,7 @@ var app = new Vue( {
 
     query : '',
     researchResults : [],
+    
 },
   methods : {
 
@@ -17,17 +18,19 @@ var app = new Vue( {
 
         } )
         .then((results) => {
-              console.log(results.data.results);
+              // console.log(results.data.results);
 
               this.researchResults = [...results.data.results] ;
-              console.log(this.researchResults);
+              // console.log(this.researchResults);
+              // console.log(results.data.results[2].vote_average);
+
 
         });
-
-
-
-
     },
+        voteCalculation (vote) {
+            return Math.floor(vote.vote_average/2);
+        }
+
 },
   mounted () {
 

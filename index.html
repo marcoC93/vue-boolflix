@@ -6,6 +6,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
         <link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/b1053c2d89.js" crossorigin="anonymous"></script>
         <!-- Favicons -->
 
         <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
@@ -71,16 +72,15 @@
                   <p>{{result.original_language}}</p>
                   <u>
                       <li>
-                          <i>{{result.vote_count}} (stelle)</i>
+                          <i class="fas fa-star" v-for="vote in voteCalculation(result)">
+                          </i>
+                          <i class="far fa-star" v-for="vote in (5 - voteCalculation(result))">
+                          </i>
+                          
                       </li>
                   </u>
                   <p><a class="btn btn-secondary" href="#" role="button">vai alla scheda completa &raquo;</a></p>
               </div>
-              <!-- <div class="col-md-4 card">
-                <h2>{{query}}</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div> -->
 
             </div>
 
