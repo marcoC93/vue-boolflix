@@ -71,9 +71,9 @@
                 <div class=" class="col-md-12 >
                     <h1>Film</h1>
                 </div>
-              <div class="col-md-4 card" v-for="result in researchResults">
-                  <h2>{{result.title}}</h2>
-                  <h3>{{result.original_title}}</h3>
+              <div class="col-md-4 card" v-for="result in researchResults" >
+                  <h2>{{result.title ? result.title : result.name }}</h2>
+                  <h3>{{result.original_title ? result.original_title : result.original_name}}</h3>
                   <div class="">
                       <span class="text-capitalize">lingua : </span>
                       <img :src="'img/' + result.original_language +'.png'" :alt="result.original_language" >
@@ -98,22 +98,22 @@
 
             </div> <!-- /container -->
             <!-- Inizio riga serie TV  -->
-            <div class="container">
+            <!-- <div class="container"> -->
             <!-- Example row of columns -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class=" class="col-md-12 >
                     <h1 class="text-capitalize">serie TV</h1>
                 </div>
               <div class="col-md-4 card" v-for="result in researchResults">
-                  <h2>{{result.name}}</h2>
+                  <h2>{{result.name }}</h2>
                   <h3>{{result.original_name}}</h3>
                   <div class="">
                       <span class="text-capitalize">lingua : </span>
                       <img :src="'img/' + result.original_language +'.png'" :alt="result.original_language" >
 
                   </div>
-                  <!-- <p>{{result.original_language}}</p> -->
-                  <ul>
+                  <!-- <p>{{result.original_language}}</p> --> -->
+                  <!-- <ul>
                       <li>
                           <i class="fas fa-star" v-for="vote in voteCalculation(result)">
                           </i>
@@ -130,7 +130,7 @@
             <hr>
 
             </div> <!-- /container -->
-            </main>
+            </main> -->
 
             <footer class="container">
             <p>&copy; M.C Elettronica di Chianese Marco 2020</p>
