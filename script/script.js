@@ -1,5 +1,8 @@
 const base_url = 'https://api.themoviedb.org/3/search/movie';
 const api_key = 'a837f0e3cc53c9e644cd012f87fc7331';
+const posterBaseURL = 'https://image.tmdb.org/t/p/' ;
+const posterWidth = 'w185' ;
+const noPosterIMG = 'img/no_image.jpg' ;
 
 var app = new Vue( {
   el: '#root',
@@ -45,7 +48,17 @@ var app = new Vue( {
 
         voteCalculation (vote) {
             return Math.floor(vote.vote_average/2);
+        },
+    getPosterURL (poster_path) {
+
+        if (poster_path) {
+                return posterBaseURL + posterWidth + poster_path ;
         }
+        else {
+            return noPosterIMG ;
+        }
+
+    }
 
 },
   mounted () {

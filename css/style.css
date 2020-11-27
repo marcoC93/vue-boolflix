@@ -38,6 +38,7 @@ ul {
     color: #221f1f;
 }
 /*  schede film e serie tv */
+
 .card {
     padding: 10px;
     color: white;
@@ -46,10 +47,10 @@ ul {
 .card span {
     display: inline-block;
 }
-.card img {
+.card .flag {
     width: 50px;
     display: inline-block;
-    padding-left: 5px; 
+    padding-left: 5px;
 }
 
 
