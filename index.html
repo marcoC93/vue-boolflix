@@ -27,13 +27,14 @@
 
 
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg">
-            <a class="navbar-brand" href="#">Boolfix</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+                <a class="navbar-brand" href="#">Boolfix</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
@@ -50,47 +51,55 @@
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="searchMovies, searchMovies" >
                   Search
               </button>
-          </div>
+            </div>
             </div>
             </nav>
 
             <main role="main">
 
-            <!-- Main jumbotron for a primary marketing message or call to action -->
-            <div class="jumbotron">
-            <div class="container">
-              <h1 class="display-3 text-capitalize">boolfix</h1>
-              <p>boolfix é il tuo motore di ricerca un riferimento per trovare i tuoi film preferiti   .</p>
-              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-            </div>
-            </div>
-
             <div class="container">
             <!-- Example row of columns -->
             <div class="row">
-                <div class=" class="col-md-12 >
-                    <h1 class="display-block">Film</h1>
+                <div class="col-md-12" >
+                    <h1 >Film</h1>
                 </div>
               <div class="col-md-4 card" v-for="result in researchResults" >
-                  <img :src="getPosterURL(result.poster_path)" alt="">
-                  <h2>{{result.title ? result.title : result.name }}</h2>
-                  <h3>{{result.original_title ? result.original_title : result.original_name}}</h3>
-                  <div class="">
-                      <span class="text-capitalize">lingua : </span>
-                      <img class="flag" :src="'img/' + result.original_language +'.png'" :alt="result.original_language" >
+                  <div class="card-inner">
+                      <div class="card-front">
 
+
+
+                          <img :src="getPosterURL(result.poster_path)" alt="">
+
+
+                      </div>
+                      <div class="card-back">
+                          <h2>{{result.title ? result.title : result.name }}</h2>
+                          <h3>{{result.original_title ? result.original_title : result.original_name}}</h3>
+                          <div class="">
+                              <span class="text-capitalize">lingua : </span>
+                              <img class="flag" :src="'img/' + result.original_language +'.png'" :alt="result.original_language" >
+
+                          </div> 
+
+
+                      <ul>
+                          <li>
+                              <i class="fas fa-star" v-for="vote in voteCalculation(result)">
+                              </i>
+
+                              <i class="far fa-star" v-for="vote in (5 - voteCalculation(result))">
+                              </i>
+
+                          </li>
+                      </ul>
+                      <p>
+                          <a class="btn btn-secondary" href="#" role="button">
+                              vai alla scheda completa &raquo;
+                          </a>
+                      </p>
+                    </div>
                   </div>
-                  <!-- <p>{{result.original_language}}</p> -->
-                  <ul>
-                      <li>
-                          <i class="fas fa-star" v-for="vote in voteCalculation(result)">
-                          </i>
-                          <i class="far fa-star" v-for="vote in (5 - voteCalculation(result))">
-                          </i>
-
-                      </li>
-                  </ul>
-                  <p><a class="btn btn-secondary" href="#" role="button">vai alla scheda completa &raquo;</a></p>
               </div>
 
             </div>
